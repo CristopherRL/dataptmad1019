@@ -1,0 +1,113 @@
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master/lorem$ git branch
+* lab-bash-master
+  lab-resolving-git-conflict
+  master
+
+He usado el comando echo para la salida de pantalla
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ echo 'hello world'
+hello world
+
+mkdir crea carpeta en la path actual
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ mkdir new_dir
+
+ls muestra las carpetas actuales
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ ls
+exercices  inputs  lorem  lorem-copy  new_dir  outputs  README.md
+
+borro la carpeta new_dir
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ rm -r new_dir
+
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ ls
+exercices  inputs  lorem  lorem-copy  outputs  README.md
+
+tomo el archido sed.txt desde lorem y lo copio en loren-copy
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ cp lorem/sed.txt lorem-copy/
+
+tomo los dos archivos txt at y lorem y los copio en lorem-copy
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ cp lorem/at.txt lorem/lorem.txt lorem-copy/
+
+visualizo sed.txt en lorem
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ cat lorem/sed.txt
+
+visualizo los txt at y lorem de la carpeta lorem
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ cat lorem/at.txt lorem/lorem.txt
+
+visualizo las 3 prieras lineas de sed.txt de lorem-copy
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ head -n 3 lorem-copy/sed.txt
+
+incluyo el texto al final del archivo
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ echo "Homo homini lupus." >> lorem-copy/sed.txt 
+
+visualizo las 3 ultimas lineas de sed.txt de lorem-copy
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ tail -n 3 lorem-copy/sed.txt 
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+Homo homini lupus.
+
+reemplzado et por ET
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ sed 's/et/ET/g' lorem-copy/at.txt 
+
+cual es el usuario actual
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ whoami
+
+cual es la ruta actual
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ pwd
+
+busco los archivos que terminen por ".txt" en lorem
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ ls lorem/ | egrep '.txt'
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ ls lorem/ *txt
+
+cuento las lineas en sed.txt
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ wc -l lorem/sed.txt 
+
+busco y cuento los archivos con nombre "lorem"
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ find -type f -name "lorem.*"
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ find -type f -name "lorem.*" | wc -l
+
+busco el texto "et" en archivo ar de lorem
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ grep "et" lorem/at.txt
+
+busco el texto exacto "et" en archivo ar de lorem
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ grep -rnw lorem/at.txt -e "et"
+
+busco el texto "et" en todos los archivos
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ grep -rnw -e "et"
+
+
+"bash files 
+
+creo el archivo
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ touch list_files.sh
+
+lo modifico
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ nano list_files.sh
+
+lo llamo
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ bash list_files.sh 
+exercices  inputs  list_files.sh  lorem  lorem-copy  outputs  README.md  solution.txt
+
+
+bonus
+
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ nano list_files.sh
+$ name="Cristopher"
+
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ nano list_files.sh
+$ echo $name
+Cristopher
+
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ nano list_files.sh
+$ mkdir $name
+
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ nano list_files.sh
+$ rmdir $name
+
+
+
+
+
+
+
+
+
