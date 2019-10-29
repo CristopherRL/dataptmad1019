@@ -104,6 +104,17 @@ cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-ma
 $ rmdir $name
 
 
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ top
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ ps -e
+
+'print the cpu hardware details
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ lscpu
+
+'compressing some directories
+cristopherrl@cristopherrl-aspire:~/data-lab/3/dataptmad1019/module-1/lab-bash-master$ tar -zcvf lorem-compressed.tar.gz lorem-copy/ lorem/
+
+
+
 
 
 
