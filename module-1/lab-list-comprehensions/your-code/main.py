@@ -39,11 +39,11 @@ b = np.array([[[0.55867166, 0.06210792, 0.08147297],
        [[0.07529684, 0.46470767, 0.47984544],
         [0.65368638, 0.14901286, 0.23760688]]])
 
-list5 = [x for i in a for j in i for x in j]
+list5 = [x for i in b for j in i for x in j]
 print (list5)
 
 #5b. Add a condition to the list comprehension above so that the last value in each subarray is printed, but only if it is less than or equal to 0.5.
-list5b = [x for i in a for j in i for x in j if x<=0.5]
+list5b = [x for i in b for j in i for x in j if x<=0.5]
 print (list5b)
 
 #6. Use a list comprehension to select and print the names of all CSV files in the /data directory.
