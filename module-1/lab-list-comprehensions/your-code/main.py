@@ -5,7 +5,7 @@ print (list1)
 list2 = [i for i in range (1,201) if i%2==0]
 print (list2)
 #3. Use a list comprehension to create and print a list containing all elements of the 10 x 4 Numpy array below.
-#import numpy as np
+import numpy as np
 a = np.array([	[0.84062117, 0.48006452, 0.7876326 , 0.77109654],
        		[0.44409793, 0.09014516, 0.81835917, 0.87645456],
        		[0.7066597 , 0.09610873, 0.41247947, 0.57433389],
