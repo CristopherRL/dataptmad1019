@@ -43,7 +43,7 @@ list5 = [x for i in b for j in i for x in j]
 print (list5)
 
 #5b. Add a condition to the list comprehension above so that the last value in each subarray is printed, but only if it is less than or equal to 0.5.
-list5b = [x for i in b for j[-1] in i for x in j if x<=0.5]
+list5b = [x for i in b for j in i for x in j if j[-1] and x<=0.5]
 print (list5b)
 
 #6. Use a list comprehension to select and print the names of all CSV files in the /data directory.
