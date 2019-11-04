@@ -33,33 +33,30 @@ print ("4th exercise:")
 print (list4)
 
 #5. Use a list comprehension to create and print a list containing all elements of the 5 x 2 x 3 Numpy array below.
-b = np.array([[[0.55867166, 0.06210792, 0.08147297],
-        [0.82579068, 0.91512478, 0.06833034]],
+b = np.array(
+       [[[0.55867166, 0.06210792, 0.08147297], [0.82579068, 0.91512478, 0.06833034]],
 
-       [[0.05440634, 0.65857693, 0.30296619],
-        [0.06769833, 0.96031863, 0.51293743]],
+       [[0.05440634, 0.65857693, 0.30296619], [0.06769833, 0.96031863, 0.51293743]],
 
-       [[0.09143215, 0.71893382, 0.45850679],
-        [0.58256464, 0.59005654, 0.56266457]],
+       [[0.09143215, 0.71893382, 0.45850679], [0.58256464, 0.59005654, 0.56266457]],
 
-       [[0.71600294, 0.87392666, 0.11434044],
-        [0.8694668 , 0.65669313, 0.10708681]],
+       [[0.71600294, 0.87392666, 0.11434044], [0.8694668 , 0.65669313, 0.10708681]],
 
-       [[0.07529684, 0.46470767, 0.47984544],
-        [0.65368638, 0.14901286, 0.23760688]]])
+       [[0.07529684, 0.46470767, 0.47984544], [0.65368638, 0.14901286, 0.23760688]]])
 
 list5 = [x for i in b for j in i for x in j]
 print ("5th exercise:")
 print (list5)
 
 #5b. Add a condition to the list comprehension above so that the last value in each subarray is printed, but only if it is less than or equal to 0.5.
-list5b = [x for i in b for j in i for x in j if j[-1] and x<=0.5]
+list5b = [x for i in b for j in i for x in j if j[-1] and x <=0.5]
 print ("5th-b exercise:")
 print (list5b)
 
 #6. Use a list comprehension to select and print the names of all CSV files in the /data directory.
-#dir = './Ironhack/Labs/dataptmad1019/module-1/lab-list-comprehensions/data'
-list6 = [f for f in os.listdir('./data') if f.endswith('.csv')]
+path = "/home/cristopherrl/Ironhack/Labs/dataptmad1019/module-1/lab-list-comprehensions/data/"
+list6 = [f for f in os.listdir(path) if f.endswith('.csv')]
+print ("6th exercise:")
 print(list6)
 
 #7. Use a list comprehension and the Pandas read_csv and concat methods to read all CSV files in the /data directory and combine them into a single data frame. Display the top 10 rows of the resulting data frame
