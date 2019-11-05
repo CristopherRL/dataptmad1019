@@ -49,7 +49,8 @@ print ("5th exercise:")
 print (list5)
 
 #5b. Add a condition to the list comprehension above so that the last value in each subarray is printed, but only if it is less than or equal to 0.5.
-list5b = [x for i in b for j in i for x in j if j[-1] and x <=0.5]
+#list5b = [x for i in b for j in i for x in j if j[-1] and x <=0.5]
+list5b = [j[-1] for i in b for j in i if j[-1]<=0.5]
 print ("5th-b exercise:")
 print (list5b)
 
@@ -60,6 +61,8 @@ print ("6th exercise:")
 print(list6)
 
 #7. Use a list comprehension and the Pandas read_csv and concat methods to read all CSV files in the /data directory and combine them into a single data frame. Display the top 10 rows of the resulting data frame
+csv_data = pd.read_csv(path)
+
 
 #8. Use a list comprehension to select and print the column numbers for columns from the data set whose median is less than 0.48
 
