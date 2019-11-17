@@ -1,10 +1,10 @@
 ---Challenge 1 - Who Have Published What At Where?
 SELECT 
-authors.au_id as AUTHOR_ID,
-authors.au_lname AS LAST_NAME,
-authors.au_fname AS FIRST_NAME,
-titles.title AS TITLE,
-publishers.pub_name AS PUBLISHER
+authors.au_id as "AUTHOR ID",
+authors.au_lname AS "LAST NAME",
+authors.au_fname AS "FIRST NAME",
+titles.title AS "TITLE",
+publishers.pub_name AS "PUBLISHER"
 FROM titles
 JOIN publishers on titles.pub_id = publishers.pub_id
 JOIN titleauthor on titles.title_id = titleauthor.title_id
@@ -26,12 +26,36 @@ FROM titleauthor
 --  ######################################################################################
 -- Challenge 2 - Who Have Published How Many At Where?
 SELECT 
-authors.au_id as AUTHOR_ID, authors.au_lname AS LAST_NAME,
-authors.au_fname AS FIRST_NAME, publishers.pub_name AS PUBLISHER,
-COUNT (titles.title) AS TITLE
+-- *
+authors.au_id as "AUTHOR ID",
+authors.au_lname AS "LAST NAME",
+authors.au_fname AS "FIRST NAME",
+---titles.title AS "TITLE",
+publishers.pub_name AS "PUBLISHER",
+COUNT (titles.title) as "TITLE COUNT"
 FROM titles
 JOIN publishers on titles.pub_id = publishers.pub_id
 JOIN titleauthor on titles.title_id = titleauthor.title_id
 JOIN authors on titleauthor.au_id = authors.au_id
+GROUP BY "AUTHOR ID", publishers.pub_name
+ORDER by "AUTHOR ID" DESC,"TITLE COUNT" DESC
 ;
 
+--  ######################################################################################
+-- Challenge 3 - Best Selling Authors
+SELECT
+--*
+authors.au_id as "AUTHOR ID",
+authors.au_lname AS "LAST NAME",
+authors.au_fname AS "FIRST NAME",
+---titles.title AS "TITLE",
+--publishers.pub_name AS "PUBLISHER",
+SUM (ytd_sales) as "TOTAL"
+FROM titles
+JOIN publishers on titles.pub_id = publishers.pub_id
+JOIN titleauthor on titles.title_id = titleauthor.title_id
+JOIN authors on titleauthor.au_id = authors.au_id
+GROUP BY "AUTHOR ID" --, publishers.pub_name
+ORDER by "TOTAL" DESC
+LIMIT 3
+;
