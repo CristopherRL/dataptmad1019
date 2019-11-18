@@ -88,8 +88,11 @@ LIMIT 3
 
 --  ######################################################################################
 -- Challenge 4 - Best Selling Authors Ranking
+SELECT 
+authors.au_id
+FROM authors;
+
 SELECT
---*
 authors.au_id as "AUTHOR ID",
 authors.au_lname AS "LAST NAME",
 authors.au_fname AS "FIRST NAME",
@@ -101,7 +104,6 @@ LEFT JOIN titles on titles.title_id = titleauthor.title_id
 LEFT JOIN publishers on titles.pub_id = publishers.pub_id
 GROUP BY "AUTHOR ID" --, publishers.pub_name
 ORDER by "TOTAL" DESC
--- tengo que ver lo den outer join
 ;
 
 
