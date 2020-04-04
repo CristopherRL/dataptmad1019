@@ -1,2 +1,2 @@
-https://public.tableau.com/profile/cristopher.michael.rojas.lepe#!/vizhome/Lab-intro-to-bi-and-tableau_15816235097070/TotalWarehouseSalesbyYearQuarter?publish=yes
+https://public.tableau.com/profile/cristopher.michael.rojas.lepe#!/vizhome/Lab-intro-to-bi-and-tableau_15816235097070/Story1?publish=yes
 
